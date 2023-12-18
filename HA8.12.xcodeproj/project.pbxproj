@@ -23,6 +23,7 @@
 		7B88D3D12B2B008F0032D0BB /* Note+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B88D3CF2B2B008F0032D0BB /* Note+CoreDataClass.swift */; };
 		7B88D3D22B2B008F0032D0BB /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B88D3D02B2B008F0032D0BB /* Note+CoreDataProperties.swift */; };
 		7B88D3D42B2B0AA20032D0BB /* NoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B88D3D32B2B0AA20032D0BB /* NoteDataManager.swift */; };
+		7B88D3DA2B32C5980032D0BB /* OnBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B88D3D92B32C5980032D0BB /* OnBoard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		7B88D3CF2B2B008F0032D0BB /* Note+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7B88D3D02B2B008F0032D0BB /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7B88D3D32B2B0AA20032D0BB /* NoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDataManager.swift; sourceTree = "<group>"; };
+		7B88D3D92B32C5980032D0BB /* OnBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,19 +81,14 @@
 		7B88D3812B26E0480032D0BB /* HA8.12 */ = {
 			isa = PBXGroup;
 			children = (
+				7B88D3DC2B32C6920032D0BB /* SupportFiles */,
+				7B88D3DB2B32C6570032D0BB /* App */,
+				7B88D3D82B32C3D60032D0BB /* Settings */,
+				7B88D3D72B32C3BD0032D0BB /* OnBoard */,
+				7B88D3D62B32C3970032D0BB /* Local */,
 				7B88D3C92B2AF6380032D0BB /* AddNote */,
 				7B88D3C62B2AE80A0032D0BB /* Main */,
-				7B88D3822B26E0480032D0BB /* AppDelegate.swift */,
-				7B88D3842B26E0480032D0BB /* SceneDelegate.swift */,
-				7B88D3C22B2721030032D0BB /* OnBoardingViewController.swift */,
-				7B88D3C42B27246F0032D0BB /* OnBoardingCell.swift */,
-				7B88D38B2B26E0490032D0BB /* Assets.xcassets */,
-				7B88D38D2B26E0490032D0BB /* LaunchScreen.storyboard */,
 				7B88D3902B26E0490032D0BB /* Info.plist */,
-				7B88D3962B26E48B0032D0BB /* SettingsViewController.swift */,
-				7B88D3BE2B26EDD00032D0BB /* Settings.swift */,
-				7B88D3C02B26EF020032D0BB /* SettingCell.swift */,
-				7B88D3D32B2B0AA20032D0BB /* NoteDataManager.swift */,
 			);
 			path = HA8.12;
 			sourceTree = "<group>";
@@ -111,6 +108,52 @@
 				7B88D3CA2B2AF6750032D0BB /* AddNoteViewController.swift */,
 			);
 			path = AddNote;
+			sourceTree = "<group>";
+		};
+		7B88D3D62B32C3970032D0BB /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				7B88D3D32B2B0AA20032D0BB /* NoteDataManager.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		7B88D3D72B32C3BD0032D0BB /* OnBoard */ = {
+			isa = PBXGroup;
+			children = (
+				7B88D3C42B27246F0032D0BB /* OnBoardingCell.swift */,
+				7B88D3D92B32C5980032D0BB /* OnBoard.swift */,
+				7B88D3C22B2721030032D0BB /* OnBoardingViewController.swift */,
+			);
+			path = OnBoard;
+			sourceTree = "<group>";
+		};
+		7B88D3D82B32C3D60032D0BB /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				7B88D3C02B26EF020032D0BB /* SettingCell.swift */,
+				7B88D3962B26E48B0032D0BB /* SettingsViewController.swift */,
+				7B88D3BE2B26EDD00032D0BB /* Settings.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		7B88D3DB2B32C6570032D0BB /* App */ = {
+			isa = PBXGroup;
+			children = (
+				7B88D3842B26E0480032D0BB /* SceneDelegate.swift */,
+				7B88D3822B26E0480032D0BB /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		7B88D3DC2B32C6920032D0BB /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				7B88D38D2B26E0490032D0BB /* LaunchScreen.storyboard */,
+				7B88D38B2B26E0490032D0BB /* Assets.xcassets */,
+			);
+			path = SupportFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +239,7 @@
 				7B88D3CB2B2AF6750032D0BB /* AddNoteViewController.swift in Sources */,
 				7B88D3D12B2B008F0032D0BB /* Note+CoreDataClass.swift in Sources */,
 				7B88D3CE2B2AFEC20032D0BB /* Notes.xcdatamodeld in Sources */,
+				7B88D3DA2B32C5980032D0BB /* OnBoard.swift in Sources */,
 				7B88D3BF2B26EDD00032D0BB /* Settings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

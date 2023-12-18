@@ -10,12 +10,15 @@ import UIKit
 
 class SettingsViewController: UIViewController{
     
-    private var settings: [Setting] = [Setting(title: "Темная тема", type: .configure), Setting(title: "Выбрать язык", type: .none)]
+    let noteDataManager  = NoteDataManager.shared
+    
+    private var settings: [Setting] = [Setting(title: "Темная тема", type: .configure), Setting(title: "Выбрать язык", type: .none), Setting(title: "Очистить данные", type: .none)]
     
     
     private lazy var settingsTableView: UITableView = {
         let view = UITableView()
         view.dataSource = self
+        view.delegate = self
         view.register(SettingCell.self, forCellReuseIdentifier: SettingCell.reuseId)
         return view
     }()
@@ -68,6 +71,22 @@ extension SettingsViewController: UITableViewDataSource{
     }
     
     
+}
+extension SettingsViewController: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 2{
+            let alert = UIAlertController(title: "Удаление", message: "Вы уверены, что хотите удалить?", preferredStyle: .alert)
+            let actionAccept = UIAlertAction(title: "Да", style: .cancel) { action in
+                self.noteDataManager.deleteNotes()
+            }
+            let actionNo = UIAlertAction(title: "Нет", style: .default) { action in
+                
+            }
+            alert.addAction(actionAccept)
+            alert.addAction(actionNo)
+            present(alert, animated: true)
+        }
+    }
 }
 extension SettingsViewController: SettingCellDelegate{
     func didSwitchOn(isOn: Bool) {

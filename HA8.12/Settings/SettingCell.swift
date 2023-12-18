@@ -23,6 +23,8 @@ class SettingCell: UITableViewCell{
         return view
     }()
     
+    
+    
     private lazy var settingSwitch: UISwitch = {
         let view = UISwitch()
         view.isHidden = true
@@ -30,6 +32,8 @@ class SettingCell: UITableViewCell{
         view.isOn = UserDefaults.standard.bool(forKey: "theme")
         return view
     }()
+    
+    
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

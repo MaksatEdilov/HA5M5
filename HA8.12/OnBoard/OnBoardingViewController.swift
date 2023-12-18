@@ -33,7 +33,8 @@ class OnBoardingViewController: UIViewController {
     private lazy var skipButton: UIButton = {
         let view = UIButton(type: .system)
         view.setTitle("Skip", for: .normal)
-        view.layer.borderWidth = 0.5
+        view.setTitleColor(UIColor(red: 1, green: 0.237, blue: 0.237, alpha: 1), for: .normal)
+        view.backgroundColor = .clear
         view.addTarget(self, action: #selector(leftButtonTapped), for: .touchUpInside)
         return view
     }()
@@ -45,6 +46,7 @@ class OnBoardingViewController: UIViewController {
         view.setTitleColor(.white, for: .normal)
         view.addTarget(self, action: #selector(rightButtonTapped), for: .touchUpInside)
         view.backgroundColor = .red
+        view.layer.cornerRadius = 20
         return view
     }()
     
@@ -53,7 +55,7 @@ class OnBoardingViewController: UIViewController {
         let view = UIPageControl()
         view.numberOfPages = 3
         view.currentPage = 0
-        view.currentPageIndicatorTintColor = .systemGreen
+        view.currentPageIndicatorTintColor = .systemGray
         view.pageIndicatorTintColor = .gray
         return view
     }()
@@ -105,20 +107,20 @@ class OnBoardingViewController: UIViewController {
         
         view.addSubview(pageControl)
         pageControl.translatesAutoresizingMaskIntoConstraints = false
-        pageControl.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -70).isActive = true
+        pageControl.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -290).isActive = true
         pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         view.addSubview(skipButton)
         skipButton.translatesAutoresizingMaskIntoConstraints = false
-        skipButton.rightAnchor.constraint(equalTo: view.centerXAnchor, constant: -50).isActive = true
-        skipButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30).isActive = true
+        skipButton.rightAnchor.constraint(equalTo: view.centerXAnchor, constant: -10).isActive = true
+        skipButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -130).isActive = true
         skipButton.widthAnchor.constraint(equalToConstant: 150).isActive = true
         skipButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
         
         view.addSubview(nextButton)
         nextButton.translatesAutoresizingMaskIntoConstraints = false
-        nextButton.leftAnchor.constraint(equalTo: view.centerXAnchor, constant: 50).isActive = true
-        nextButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30).isActive = true
+        nextButton.leftAnchor.constraint(equalTo: view.centerXAnchor, constant: 10).isActive = true
+        nextButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -130).isActive = true
         nextButton.widthAnchor.constraint(equalToConstant: 150).isActive = true
         nextButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
     }

@@ -24,6 +24,15 @@ class NotesViewController: UIViewController {
         return view
     }()
     
+    private lazy var notesLabel: UILabel = {
+        let view = UILabel()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.text = "Заметки"
+        view.textColor = .black
+        view.font = .systemFont(ofSize: 16, weight: .regular)
+        return view
+    }()
+    
     private lazy var notesCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 12
@@ -39,6 +48,7 @@ class NotesViewController: UIViewController {
         let view = UIButton(type: .system)
         view.backgroundColor = .red
         view.setTitle("+", for: .normal)
+        view.setTitleColor(.systemBackground, for: .normal)
         view.layer.cornerRadius = 42 / 2
         view.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
         return view
@@ -114,9 +124,15 @@ class NotesViewController: UIViewController {
         noteSearchBar.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16).isActive = true
         noteSearchBar.heightAnchor.constraint(equalToConstant: 36).isActive = true
         
+        view.addSubview(notesLabel)
+        notesLabel.translatesAutoresizingMaskIntoConstraints = false
+        notesLabel.topAnchor.constraint(equalTo: noteSearchBar.bottomAnchor, constant: 32).isActive = true
+        notesLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 50).isActive = true
+        
+        
         view.addSubview(notesCollectionView)
         notesCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        notesCollectionView.topAnchor.constraint(equalTo: noteSearchBar.bottomAnchor, constant: 84).isActive = true
+        notesCollectionView.topAnchor.constraint(equalTo: notesLabel.bottomAnchor, constant: 40).isActive = true
         notesCollectionView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
         notesCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
         notesCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
@@ -150,6 +166,13 @@ extension NotesViewController: UICollectionViewDataSource{
 extension NotesViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: (view.frame.size.width - 58) / 2, height: 100)
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailViewController = AddNoteViewController()
+        let item = filteredNotes[indexPath.row]
+        detailViewController.note = item
+        detailViewController.isNewNote = false
+        navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
 
