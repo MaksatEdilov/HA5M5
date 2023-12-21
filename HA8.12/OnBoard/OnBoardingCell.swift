@@ -31,7 +31,8 @@ class OnBoardingCell: UICollectionViewCell{
         let view = UILabel()
         view.font = .systemFont(ofSize: 14, weight: .regular)
         view.textColor = .gray
-        view.numberOfLines = 4
+        view.numberOfLines = 0
+        view.textAlignment = .center
         return view
     }()
    
@@ -65,6 +66,7 @@ class OnBoardingCell: UICollectionViewCell{
         secondLbl.translatesAutoresizingMaskIntoConstraints = false
         secondLbl.topAnchor.constraint(equalTo: titleLbl.bottomAnchor, constant: 16).isActive = true
         secondLbl.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        secondLbl.widthAnchor.constraint(equalToConstant: frame.width - 40).isActive = true
         secondLbl.heightAnchor.constraint(equalToConstant: 80).isActive = true
         
         contentView.addSubview(GreetingImg)

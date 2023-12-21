@@ -62,9 +62,22 @@ class AddNoteViewController: UIViewController {
             let settingsBarButton = UIBarButtonItem(image:UIImage(systemName: "gear"), style: .plain, target: self, action: #selector(titleTextFieldEditingChanged))
             navigationItem.rightBarButtonItem = settingsBarButton
         } else {
-            let settingsBarButton = UIBarButtonItem(image:UIImage(systemName: "trash"), style: .plain, target: self, action: #selector(titleTextFieldEditingChanged))
+            let settingsBarButton = UIBarButtonItem(image:UIImage(systemName: "trash"), style: .plain, target: self, action: #selector(trashBtn))
             navigationItem.rightBarButtonItem = settingsBarButton
         }
+    }
+    
+    @objc private func trashBtn(){
+        let alert = UIAlertController(title: "Удаление", message: "Вы хотите удалить?", preferredStyle: .alert)
+        let actionAccept = UIAlertAction(title: "Да", style: .cancel) { action in
+            self.noteDataManager.deleteNote(id: self.note?.id ?? "")
+        }
+        let actionNo = UIAlertAction(title: "Нет", style: .default) { action in
+            
+        }
+        alert.addAction(actionAccept)
+        alert.addAction(actionNo)
+        present(alert, animated: true)
     }
     
     @objc func titleTextFieldEditingChanged(){

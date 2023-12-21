@@ -157,7 +157,7 @@ extension NotesViewController: UICollectionViewDataSource{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NoteCell.reuseId, for: indexPath) as! NoteCell
         let randomColor = colors.randomElement()
         cell.backgroundColor = randomColor
-        cell.setup(title: filteredNotes[indexPath.row].title ?? "")
+        cell.setup(title: filteredNotes[indexPath.row].title ?? "", details: filteredNotes[indexPath.row].details ?? "")
         return cell
     }
     

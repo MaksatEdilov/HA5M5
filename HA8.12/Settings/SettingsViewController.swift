@@ -74,7 +74,17 @@ extension SettingsViewController: UITableViewDataSource{
 }
 extension SettingsViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 2{
+        switch  indexPath.row {
+        case 0:
+            ()
+        case 1:
+            let languageViewController = LanguageViewController()
+            if let bottomSheet = languageViewController.sheetPresentationController{
+                bottomSheet.detents = [.medium()]
+            }
+            present(languageViewController, animated: true)
+            ()
+        case 2:
             let alert = UIAlertController(title: "Удаление", message: "Вы уверены, что хотите удалить?", preferredStyle: .alert)
             let actionAccept = UIAlertAction(title: "Да", style: .cancel) { action in
                 self.noteDataManager.deleteNotes()
@@ -85,7 +95,13 @@ extension SettingsViewController: UITableViewDelegate{
             alert.addAction(actionAccept)
             alert.addAction(actionNo)
             present(alert, animated: true)
+            ()
+        default:
+            ()
+            
         }
+
+       
     }
 }
 extension SettingsViewController: SettingCellDelegate{

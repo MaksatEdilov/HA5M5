@@ -87,5 +87,7 @@ final class NoteDataManager: NSObject {
         }catch{
             print(error.localizedDescription)
         }
+        
+        appDelegate.saveContext()
     }
 }

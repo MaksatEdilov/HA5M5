@@ -24,6 +24,9 @@
 		7B88D3D22B2B008F0032D0BB /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B88D3D02B2B008F0032D0BB /* Note+CoreDataProperties.swift */; };
 		7B88D3D42B2B0AA20032D0BB /* NoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B88D3D32B2B0AA20032D0BB /* NoteDataManager.swift */; };
 		7B88D3DA2B32C5980032D0BB /* OnBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B88D3D92B32C5980032D0BB /* OnBoard.swift */; };
+		7B88D3DF2B3487D80032D0BB /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B88D3DE2B3487D80032D0BB /* LanguageViewController.swift */; };
+		7B88D3E12B34892E0032D0BB /* LanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B88D3E02B34892E0032D0BB /* LanguageCell.swift */; };
+		7B88D3E32B348C900032D0BB /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B88D3E22B348C900032D0BB /* Language.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,9 @@
 		7B88D3D02B2B008F0032D0BB /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7B88D3D32B2B0AA20032D0BB /* NoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDataManager.swift; sourceTree = "<group>"; };
 		7B88D3D92B32C5980032D0BB /* OnBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoard.swift; sourceTree = "<group>"; };
+		7B88D3DE2B3487D80032D0BB /* LanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
+		7B88D3E02B34892E0032D0BB /* LanguageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageCell.swift; sourceTree = "<group>"; };
+		7B88D3E22B348C900032D0BB /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,7 @@
 		7B88D3812B26E0480032D0BB /* HA8.12 */ = {
 			isa = PBXGroup;
 			children = (
+				7B88D3DD2B3487BA0032D0BB /* Language */,
 				7B88D3DC2B32C6920032D0BB /* SupportFiles */,
 				7B88D3DB2B32C6570032D0BB /* App */,
 				7B88D3D82B32C3D60032D0BB /* Settings */,
@@ -156,6 +163,16 @@
 			path = SupportFiles;
 			sourceTree = "<group>";
 		};
+		7B88D3DD2B3487BA0032D0BB /* Language */ = {
+			isa = PBXGroup;
+			children = (
+				7B88D3DE2B3487D80032D0BB /* LanguageViewController.swift */,
+				7B88D3E02B34892E0032D0BB /* LanguageCell.swift */,
+				7B88D3E22B348C900032D0BB /* Language.swift */,
+			);
+			path = Language;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -228,6 +245,8 @@
 			files = (
 				7B88D3872B26E0480032D0BB /* NotesViewController.swift in Sources */,
 				7B88D3832B26E0480032D0BB /* AppDelegate.swift in Sources */,
+				7B88D3E12B34892E0032D0BB /* LanguageCell.swift in Sources */,
+				7B88D3E32B348C900032D0BB /* Language.swift in Sources */,
 				7B88D3C52B27246F0032D0BB /* OnBoardingCell.swift in Sources */,
 				7B88D3D22B2B008F0032D0BB /* Note+CoreDataProperties.swift in Sources */,
 				7B88D3C32B2721030032D0BB /* OnBoardingViewController.swift in Sources */,
@@ -236,6 +255,7 @@
 				7B88D3C82B2AE84B0032D0BB /* NoteCell.swift in Sources */,
 				7B88D3972B26E48B0032D0BB /* SettingsViewController.swift in Sources */,
 				7B88D3D42B2B0AA20032D0BB /* NoteDataManager.swift in Sources */,
+				7B88D3DF2B3487D80032D0BB /* LanguageViewController.swift in Sources */,
 				7B88D3CB2B2AF6750032D0BB /* AddNoteViewController.swift in Sources */,
 				7B88D3D12B2B008F0032D0BB /* Note+CoreDataClass.swift in Sources */,
 				7B88D3CE2B2AFEC20032D0BB /* Notes.xcdatamodeld in Sources */,
